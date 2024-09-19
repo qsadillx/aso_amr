@@ -1,4 +1,5 @@
-# [UT01_introducción](/UT01_Introduccion/)
-    - index.md
-    - practicas
-# [UT02_Linux](/UT02_Linux/)
+1. UT01_Introduccion
+* [Indice](/UT01_Introduccion/index.md)
+
+2. UT02_Linux
+* [Indice](/UT02_Linux/index.md)
