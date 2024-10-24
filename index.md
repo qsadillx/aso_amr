@@ -20,3 +20,6 @@
 
     > PR0204 +
     [Ejercicio](./UT02_Linux/PR0204/PR0204.md)
+
+    > PR020X +
+    [Ejercicio](./UT02_Linux/PR020X/PR020X.md)
