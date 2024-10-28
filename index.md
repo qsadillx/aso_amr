@@ -23,3 +23,7 @@
 
     > PR020X +
     [Ejercicio](./UT02_Linux/PR020X/PR020X.md)
+
+3. UT03_Bash
+    > PR0301 +
+    [Ejercicio](./UT03_Bash/PR0301/PR0301.md)
