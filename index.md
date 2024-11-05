@@ -27,5 +27,9 @@
 3. UT03_Bash
     > PR0301 +
     [Ejercicio](./UT03_Bash/PR0301/PR0301.md)
-    > PR0302 +
-    [Ejercicio](./UT03_Bash/PR0302/PR0302.md)
+    
+    > PR0301.2 +
+    [Ejercicio](./UT03_Bash/PR0301.2//PR0301.2.md)
+    
+    > PR0302case +
+    [Ejercicio](./UT03_Bash/PR0302case/PR0302case.md)

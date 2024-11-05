@@ -182,8 +182,87 @@ fi
 
 Escribe un script que reciba el nombre de un servicio (por ejemplo, "apache" o "mysql") y, usando `case`, muestre opciones para iniciar, detener o reiniciar el servicio.
 
+```bash
+#!/bin/bash
+
+echo "¿Que servicio quieres usar?"
+echo "1) Cron"
+echo "2) Mysql"
+
+read -p "Elige una opción: " respuesta
+case $respuesta in 
+        1) 
+                echo "¿Que quieres hacer ahora?"
+                echo "1) Iniciar"
+                echo "2) Detener"
+                echo "3) Reiniciar"
+
+                read -p "Introduce la opción que quieras realizar: " respuesta2
+                case $respuesta2 in
+                        1) 
+                                sudo service cron start
+                                ;;
+                        2)
+                                sudo service  cron stop
+                                ;;
+                        3)
+                                sudo service cron restart
+                                ;;
+                esac
+                ;;
+        2)
+                echo "¿Que quieres hacer ahora?"
+                echo "1) Iniciar"
+                echo "2) Detener"
+                echo "3) Reiniciar"
+
+                read -p "Introduce la opción que quieras realizar: " respuesta2
+                case $respuesta2 in
+                        1) 
+                                sudo service mysql init
+                                ;;
+                        2)
+                                sudo service mysql stop
+                                ;;
+                        3)
+                                sudo service mysql restart
+                                ;;
+                esac
+                ;;
+esac
+```
 
 ## Ejercicio 8: Conversión de unidades de longitud
 
 Desarrolla un script que permita al usuario convertir metros a kilómetros, metros a centímetros, o metros a milímetros, utilizando `case` para manejar cada opción de conversión.
 
+```bash
+#!/bin/bash
+
+echo "De que unidad a que unidad quieres convertir: "
+echo "1) Metros a Kilometros"
+echo "2) Metros a Centimetros"
+echo "3) Metros a Milimetros"
+
+read -p "Escribe un numero entre (1-3): " opcion
+
+case $opcion in
+        1)
+                echo "Has elegido la opción: Metros a Kilometros"
+                read -p "¿Cuanto quieres pasar a Kilometros?: " suma
+                suma2=$((suma / 1000))
+                echo "$suma Metros serían $suma2 Kilometros"
+                ;;
+        2)
+                echo "Has elegido la opción: Metros a Centimetros"
+                read -p "¿Cuanto quieres pasar a centimetros?: " suma
+                suma2=$((suma * 100))
+                echo "$suma Metros serían $suma2 Centimetros"
+                ;;
+        3)
+                echo "Has elegido la opción: Metros a Milimetros"
+                read -p "¿Cuanto quieres pasar a milimetros?: " suma
+                suma2=$((suma * 1000))
+                echo "$suma Metros serían $suma2 Milimetros"
+esac
+```
