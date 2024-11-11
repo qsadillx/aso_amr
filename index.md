@@ -33,3 +33,6 @@
     
     > PR0302case +
     [Ejercicio](./UT03_Bash/PR0302case/PR0302case.md)
+
+    > PR0303 +
+    [Ejercicio](./UT03_Bash/PR0303/PR0303.md)
