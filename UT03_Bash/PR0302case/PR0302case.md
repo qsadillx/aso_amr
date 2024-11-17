@@ -6,7 +6,7 @@ Realiza las siguientes tareas:
 ## Ejercicio 1: Menú de operaciones matemáticas
 
 Crea un script que muestre un menú con opciones para sumar, restar, multiplicar y dividir dos números. Debe pedir primero un operando, luego el otro y finalmente la operación a realizar. Usa `case` para realizar la operación seleccionada por el usuario.
-
+solicitar nombre de un grupo yh mostrar por pantalla el listado de todos los usuarios que pertenecen a dicho grupo
 ```bash
 #!/bin/bash
 
@@ -41,6 +41,8 @@ else
 fi
 
 ```
+
+
 ## Ejercicio 2: Verificar días de la semana
 
 ```bash

@@ -1,3 +1,6 @@
 UT01_Introduccion\PR0101\.vagrant
 UT01_Introduccion\PR0103\.vagrant
 UT01_Introduccion\PR0102\.vagrant
+UT02_Linux\PR0201.vagrant\machines\default\virtualbox\private_key
+.vagrant/
+*.private_key
