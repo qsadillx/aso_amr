@@ -82,7 +82,3 @@ Ejemplo: *resultados.json*
 ✅ Escaneo detallado de redes IP.
 ✅ Identificación de sistemas operativos según el valor TTL.
 ✅ Almacenamiento en formato JSON para fácil consulta e integración.
-
-## 😢 Desventajas del Script
-
-❌ No he conseguido hacer la parte de la mascara de ninguna manera, ni con **nmap** ni con con **arp** 
