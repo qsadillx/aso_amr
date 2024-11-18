@@ -36,7 +36,8 @@
 
     > PR0303 +
     [Ejercicio](./UT03_Bash/PR0303/PR0303.md)
-
+    > PR0304 +
+    [Ejercicio](./UT03_Bash/PR0304/PR0304.md)
 
 4. PROYECTO EVALUACIÓN 1
    >
