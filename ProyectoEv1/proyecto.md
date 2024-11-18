@@ -20,6 +20,7 @@ Gracias a la implementación de **JSON**, los resultados se guardan en un archiv
 - **`nc` (Netcat):** Para el escaneo de puertos.  
 - **`ping`:** Para comprobar la actividad de los hosts en la red.  
 - **`cut` | `grep` | `sed`:** Utilidades necesarias para la manipulación de cadenas.  
+- **arp:** Necesitaremos esto para sacar la MAC
 - **`tcp.csv`:** Archivo con información de los servicios asociados a puertos.  
    Nota: Sin este archivo, el escaneo de puertos con *Netcat* no funcionará correctamente.
 

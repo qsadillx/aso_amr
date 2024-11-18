@@ -1,5 +1,5 @@
 #!/bin/bash
-red='\033[31m'
+red3='\033[31m'
 green='\033[32m'
 yellow='\033[33m'
 blue='\033[34m'
@@ -45,7 +45,6 @@ mascara=$(echo $red | cut -d '/' -f 2)
 # Aqui abrimos nuestro json y lo enviamos al archivo que especifiquemos
 echo "[" > "$archivo"
 
-
 # Esta funcion disminuye la redundancia, por lo que podremos usarla dentro de nuestro case y ahorrarnos 10 lineas de codigo
 ttlscanner() {
     ttl=$1
@@ -56,8 +55,8 @@ ttlscanner() {
     elif [[ "$ttl" == "128" ]]; then
         echo -e "${yellow}Windows${reset}"
     else
-    # Si no es ni 64 ni 128 devuelve que no sabra lo que és.
-        echo -e "${red}No es ni Windows ni Linux, tu sabras lo que es${reset}"
+        # Si no es ni 64 ni 128 devuelve que no sabra lo que és.
+        echo -e "${red3}No es ni Windows ni Linux, tu sabras lo que es${reset}"
     fi
 }
 
@@ -81,9 +80,13 @@ case $mascara in
                         echo -e "${green}[+] Host activo: $ip${reset}"
                         # Llamamos sis a nuestra nueva variable, en la cual almacenaremos la variable $ttl de nuestra funcion ttlscanner()
                         sis=$(ttlscanner $ttl)
-                        # Hayamos la mac del equipo
-                        mac=$(arp -n $ip | awk '/^[^ ]/{print $3}')
-                        # Generamos el json
+                        ip_local=$(hostname -I | awk '{print $1}')
+                        if [ "$ip" == "$ip_local" ]; then
+                            mimac=$(ip a | grep 'link/ether' | awk '{print $2}')
+                            mac=$mimac
+                        else
+                            mac=$(arp -n $ip | sed 's/HWaddress //g' | grep -v 'Flags' | awk '/^[^ ]/{print $3}')
+                        fi
                         echo "  {" >> "$archivo"
                         echo "    \"ip\": \"$ip\"," >> "$archivo"
                         echo "    \"sistema\": \"$sis\"," >> "$archivo"
@@ -95,7 +98,7 @@ case $mascara in
                             nc -zv -w 1 $ip $p > /dev/null 2>&1
                             # Con $? retornaremos el ultimo comando usado, por lo tanto si nos da igual a 0 será que funciona
                             if [ $? -eq 0 ]; then
-                            # Mediante la variable "servicio" haremos un grep, acompañado del parametro -w para que se busque la palabra completa, usaremos $p que representa a un puerto y lo buscaremos dentro del archivo "tcp.csv"
+                                # Mediante la variable "servicio" haremos un grep, acompañado del parametro -w para que se busque la palabra completa, usaremos $p que representa a un puerto y lo buscaremos dentro del archivo "tcp.csv"
                                 servicio=$(grep -w ",$p," tcp.csv | cut -d ',' -f 3 | tr -d '"')
                                 if [ -z "$servicio" ]; then
                                     servicio="Desconocido"
@@ -107,7 +110,7 @@ case $mascara in
                                 echo "      }," >> "$archivo"
                             fi
                         # Como la version original del script tardaba aproximadamente 600 segundos en finalizar le he añadido varios hilos metiendo entre corchetes todo nuestro codigo y añadiendo un &, de esta manera tardará un poco menos.
-                        } & done 
+                        } & done
                         sed -i '$ s/,$//' "$archivo"
                         echo "    ]" >> "$archivo"
                         echo "  }," >> "$archivo"
@@ -127,7 +130,13 @@ case $mascara in
                 if [[ $? -eq 0 && -n "$ttl" ]]; then
                     echo -e "${green}[+] Host activo: $ip${reset}"
                     sis=$(ttlscanner $ttl)
-                    mac=$(arp -n $ip | awk '/^[^ ]/{print $3}')
+                    ip_local=$(hostname -I | awk '{print $1}')
+                    if [ "$ip" == "$ip_local" ]; then
+                        mimac=$(ip a | grep 'link/ether' | awk '{print $2}')
+                        mac=$mimac
+                    else
+                        mac=$(arp -n $ip | sed 's/HWaddress //g' | grep -v 'Flags' | awk '/^[^ ]/{print $3}')
+                    fi
                     echo "  {" >> "$archivo"
                     echo "    \"ip\": \"$ip\"," >> "$archivo"
                     echo "    \"sistema\": \"$sis\"," >> "$archivo"
@@ -163,12 +172,19 @@ case $mascara in
             if [[ $? -eq 0 && -n "$ttl" ]]; then
                 echo -e "${green}[+] Host activo: $ip${reset}"
                 sis=$(ttlscanner $ttl)
-                mac=$(arp -n $ip | awk '/^[^ ]/{print $3}')
-                    echo "  {" >> "$archivo"
-                    echo "    \"ip\": \"$ip\"," >> "$archivo"
-                    echo "    \"sistema\": \"$sis\"," >> "$archivo"
-                    echo "    \"mac\": \"$mac\"," >> "$archivo"
-                    echo "    \"puertos\": [" >> "$archivo"
+                ip_local=$(hostname -I | awk '{print $1}')
+                if [ "$ip" == "$ip_local" ]; then
+                    mimac=$(ip a | grep 'link/ether' | awk '{print $2}')
+                    mac=$mimac
+                else
+                    mac=$(arp -n $ip | sed 's/HWaddress //g' | grep -v 'Flags' | awk '/^[^ ]/{print $3}')
+                fi
+                echo "  {" >> "$archivo"
+                echo "    \"ip\": \"$ip\"," >> "$archivo"
+                echo "    \"sistema\": \"$sis\"," >> "$archivo"
+                echo "    \"mac\": \"$mac\"," >> "$archivo"
+                echo "    \"puertos\": [" >> "$archivo"
+
                 for p in $(seq $puerto2 $puerto3); do {
                     nc -zv -w 1 $ip $p > /dev/null 2>&1
                     if [ $? -eq 0 ]; then
@@ -181,7 +197,7 @@ case $mascara in
                         echo "        \"servicio\": \"$servicio\"" >> "$archivo"
                         echo "      }," >> "$archivo"
                     fi
-                } & done 
+                } & done
                 sed -i '$ s/,$//' "$archivo"
                 echo "    ]" >> "$archivo"
                 echo "  }," >> "$archivo"
@@ -189,7 +205,7 @@ case $mascara in
         done
         ;;
     *)
-        echo -e "${red}[-] Esa dirección no es válida...${reset}"
+        echo -e "${red3}[-] Esa dirección no es válida...${reset}"
         exit 1
         ;;
 esac
@@ -199,9 +215,11 @@ esac
 sed -i '$ s/,$//' "$archivo"
 # Aqui cerraremos nuestro json
 echo "]" >> "$archivo"
+
 # ¿Te acuerdas de la variable arriba del script la cual nos iniciaba un date +%s para calcular los segundos que tarde?
 # Pues con este nuevo date solo tendremos que restarlas.
 finalizacion=$(date +%s)
 duracion=$((finalizacion - inicio))
+
 echo -e "${green}[+] Escaneo completo"
 echo -e "${green}[%] Tiempo transcurrido: $duracion segundos.${reset}"
