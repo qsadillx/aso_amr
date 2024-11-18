@@ -40,6 +40,7 @@ Queremos escanear la red **192.168.1.0/24** y los puertos del **50 al 54**, los 
   {
     "ip": "192.168.1.1",
     "sistema": "Windows",
+    "mac": "00:14:22:cd:ef:01",
     "puertos": [
       {
         "puerto": 50,
@@ -80,5 +81,7 @@ Ejemplo: *resultados.json*
 
 ## 😈 Ventajas del Script
 ✅ Escaneo detallado de redes IP.
-✅ Identificación de sistemas operativos según el valor TTL.
-✅ Almacenamiento en formato JSON para fácil consulta e integración.
+
+✅ Identificacipn de sistemas operativos según el valor TTL.
+
+✅ Almacenamiento en formato JSON para fácililitar las consultas
