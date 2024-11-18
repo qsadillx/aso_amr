@@ -78,7 +78,7 @@ case $mascara in
                         echo "    \"sistema\": \"$sis\"," >> "$archivo"
                         echo "    \"mac\": \"$mac\"," >> "$archivo"
                         echo "    \"puertos\": [" >> "$archivo"
-                        for p in $(seq $puerto2 $puerto3); do
+                        for p in $(seq $puerto2 $puerto3); do {
                             nc -zv -w 1 $ip $p > /dev/null 2>&1
                             if [ $? -eq 0 ]; then
                                 servicio=$(grep -w ",$p," tcp.csv | cut -d ',' -f 3 | tr -d '"')
@@ -90,7 +90,7 @@ case $mascara in
                                 echo "        \"servicio\": \"$servicio\"" >> "$archivo"
                                 echo "      }," >> "$archivo"
                             fi
-                        done
+                        } & done
                         sed -i '$ s/,$//' "$archivo"
                         echo "    ]" >> "$archivo"
                         echo "  }," >> "$archivo"
@@ -116,7 +116,7 @@ case $mascara in
                     echo "    \"sistema\": \"$sis\"," >> "$archivo"
                     echo "    \"mac\": \"$mac\"," >> "$archivo"
                     echo "    \"puertos\": [" >> "$archivo"
-                    for p in $(seq $puerto2 $puerto3); do
+                    for p in $(seq $puerto2 $puerto3); do {
                         nc -zv -w 1 $ip $p > /dev/null 2>&1
                         if [ $? -eq 0 ]; then
                             servicio=$(grep -w ",$p," tcp.csv | cut -d ',' -f 3 | tr -d '"')
@@ -128,7 +128,7 @@ case $mascara in
                             echo "        \"servicio\": \"$servicio\"" >> "$archivo"
                             echo "      }," >> "$archivo"
                         fi
-                    done
+                    } & done
                     sed -i '$ s/,$//' "$archivo"
                     echo "    ]" >> "$archivo"
                     echo "  }," >> "$archivo"
@@ -152,7 +152,7 @@ case $mascara in
                     echo "    \"sistema\": \"$sis\"," >> "$archivo"
                     echo "    \"mac\": \"$mac\"," >> "$archivo"
                     echo "    \"puertos\": [" >> "$archivo"
-                for p in $(seq $puerto2 $puerto3); do
+                for p in $(seq $puerto2 $puerto3); do {
                     nc -zv -w 1 $ip $p > /dev/null 2>&1
                     if [ $? -eq 0 ]; then
                         servicio=$(grep -w ",$p," tcp.csv | cut -d ',' -f 3 | tr -d '"')
@@ -164,7 +164,7 @@ case $mascara in
                         echo "        \"servicio\": \"$servicio\"" >> "$archivo"
                         echo "      }," >> "$archivo"
                     fi
-                done
+                } & done 
                 sed -i '$ s/,$//' "$archivo"
                 echo "    ]" >> "$archivo"
                 echo "  }," >> "$archivo"
