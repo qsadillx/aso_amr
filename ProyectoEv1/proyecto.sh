@@ -53,9 +53,11 @@ case $mascara in
                     if [[ $? -eq 0 && -n "$ttl" ]]; then
                         echo -e "${green}[+] Host activo: $ip${reset}"
                         sis=$(ttlscanner $ttl)
+                        mac=$(arp -n $ip | awk '/^[^ ]/{print $3}')
                         echo "  {" >> "$archivo"
                         echo "    \"ip\": \"$ip\"," >> "$archivo"
                         echo "    \"sistema\": \"$sis\"," >> "$archivo"
+                        echo "    \"mac\": \"$mac\"," >> "$archivo"
                         echo "    \"puertos\": [" >> "$archivo"
                         for p in $(seq $puerto2 $puerto3); do
                             nc -zv -w 1 $ip $p > /dev/null 2>&1
@@ -89,9 +91,11 @@ case $mascara in
                 if [[ $? -eq 0 && -n "$ttl" ]]; then
                     echo -e "${green}[+] Host activo: $ip${reset}"
                     sis=$(ttlscanner $ttl)
+                    mac=$(arp -n $ip | awk '/^[^ ]/{print $3}')
                     echo "  {" >> "$archivo"
                     echo "    \"ip\": \"$ip\"," >> "$archivo"
                     echo "    \"sistema\": \"$sis\"," >> "$archivo"
+                    echo "    \"mac\": \"$mac\"," >> "$archivo"
                     echo "    \"puertos\": [" >> "$archivo"
                     for p in $(seq $puerto2 $puerto3); do
                         nc -zv -w 1 $ip $p > /dev/null 2>&1
@@ -123,10 +127,12 @@ case $mascara in
             if [[ $? -eq 0 && -n "$ttl" ]]; then
                 echo -e "${green}[+] Host activo: $ip${reset}"
                 sis=$(ttlscanner $ttl)
-                echo "  {" >> "$archivo"
-                echo "    \"ip\": \"$ip\"," >> "$archivo"
-                echo "    \"sistema\": \"$sis\"," >> "$archivo"
-                echo "    \"puertos\": [" >> "$archivo"
+                mac=$(arp -n $ip | awk '/^[^ ]/{print $3}')
+                    echo "  {" >> "$archivo"
+                    echo "    \"ip\": \"$ip\"," >> "$archivo"
+                    echo "    \"sistema\": \"$sis\"," >> "$archivo"
+                    echo "    \"mac\": \"$mac\"," >> "$archivo"
+                    echo "    \"puertos\": [" >> "$archivo"
                 for p in $(seq $puerto2 $puerto3); do
                     nc -zv -w 1 $ip $p > /dev/null 2>&1
                     if [ $? -eq 0 ]; then
