@@ -71,9 +71,9 @@ case $mascara in
         red2=$(echo $red2 | cut -d '.' -f 1)
         echo -e "${blue}[-] Escaneando red $red2.0.0.0/8...${reset}"
         # Realizamos 3 bucles for para calcular los 3 octetos
-        for a in {0..255}; do
-            for b in {0..255}; do
-                for c in {0..255}; do
+        for a in {0..254}; do
+            for b in {0..254}; do
+                for c in {0..254}; do
                     ip="$red2.$a.$b.$c"
                     ttl=$(ping -c 1 -W 1 $ip | grep -oP 'ttl=\K\d+')
                     if [[ $? -eq 0 && -n "$ttl" ]]; then
@@ -123,8 +123,8 @@ case $mascara in
     16)
         red2=$(echo $red2 | cut -d '.' -f 1,2)
         echo -e "${blue}[-] Escaneando red $red2.0.0/16...${reset}"
-        for b in {0..255}; do
-            for c in {0..255}; do
+        for b in {0..254}; do
+            for c in {0..254}; do
                 ip="$red2.$b.$c"
                 ttl=$(ping -c 1 -W 1 $ip | grep -oP 'ttl=\K\d+')
                 if [[ $? -eq 0 && -n "$ttl" ]]; then
@@ -166,7 +166,7 @@ case $mascara in
     24)
         red2=$(echo $red2 | cut -d '.' -f 1,2,3)
         echo -e "${blue}[-] Escaneando red $red2.0/24...${reset}"
-        for c in {0..255}; do
+        for c in {0..254}; do
             ip="$red2.$c"
             ttl=$(ping -c 1 -W 1 $ip | grep -oP 'ttl=\K\d+')
             if [[ $? -eq 0 && -n "$ttl" ]]; then
