@@ -80,9 +80,19 @@ Ejemplo: *1-65535*
 **Archivo de Salida**: Nombre del archivo donde se guardarán los resultados
 Ejemplo: *resultados.json*
 
+
 ## 😈 Ventajas del Script
 ✅ Escaneo detallado de redes IP.
 
 ✅ Identificacipn de sistemas operativos según el valor TTL.
 
 ✅ Almacenamiento en formato JSON para fácililitar las consultas
+
+
+## 🗒️ Actualizaciones
+
+✅ Se ha añadido el uso de hilos dentro del script para que funcione un poco mas rapido
+
+✅ Se ha añadido una funcionalidad que permite localizar la mac cuando es la misma que nuestro dispositivo
+
+✅ Se han añadido comentarios dentro del script a todas las funcionalidades para permitir su modificación de forma mas facil

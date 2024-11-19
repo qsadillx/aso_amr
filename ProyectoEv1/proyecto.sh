@@ -87,6 +87,7 @@ case $mascara in
                         else
                             mac=$(arp -n $ip | sed 's/HWaddress //g' | grep -v 'Flags' | awk '/^[^ ]/{print $3}')
                         fi
+                        # Aqui generamos el contenido nuestro json
                         echo "  {" >> "$archivo"
                         echo "    \"ip\": \"$ip\"," >> "$archivo"
                         echo "    \"sistema\": \"$sis\"," >> "$archivo"
@@ -111,6 +112,7 @@ case $mascara in
                             fi
                         # Como la version original del script tardaba aproximadamente 600 segundos en finalizar le he añadido varios hilos metiendo entre corchetes todo nuestro codigo y añadiendo un &, de esta manera tardará un poco menos.
                         } & done
+                        # Y aqui por ultimo generaremos el final de nuestro json pero sin cerrar el ultimo corchete. 
                         sed -i '$ s/,$//' "$archivo"
                         echo "    ]" >> "$archivo"
                         echo "  }," >> "$archivo"
@@ -213,6 +215,7 @@ esac
 # Ahora usaremos "sed" para modificar el contenido de un archivo
 # Usando -i le indicamos que se debe modificar el archivo original, el signo de $ se refiere a la ultima linea del archivo
 sed -i '$ s/,$//' "$archivo"
+
 # Aqui cerraremos nuestro json
 echo "]" >> "$archivo"
 
