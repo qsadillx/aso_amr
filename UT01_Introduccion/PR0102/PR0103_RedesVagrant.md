@@ -72,3 +72,5 @@ Una vez configurado el archivo VagrantFile solamente tendremos que ejecutar el c
 
 ##### Aqui nos habriamos conectado ya por RDP
 ![alt text](imagenes/image-2.png)
+
+[Volver al inicio](./../../index.md)

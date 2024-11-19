@@ -96,3 +96,5 @@ Ejemplo: *resultados.json*
 ✅ Se ha añadido una funcionalidad que permite localizar la mac cuando es la misma que nuestro dispositivo
 
 ✅ Se han añadido comentarios dentro del script a todas las funcionalidades para permitir su modificación de forma mas facil
+
+[Volver al inicio](./../../index.md)

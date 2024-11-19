@@ -68,3 +68,5 @@ Por ultimo desde nuestra maquina host usaremos el comando `crontab -e` para aña
 `*/2 * * * * rsync -av /home/vagrant/backups/ -e ssh operador@10.0.2.15:/home/operador/`
 
 Para verificar que la copia de seguridad se ha realizado usaremos `ls /home/operador/`
+
+[Volver al inicio](./../../index.md)

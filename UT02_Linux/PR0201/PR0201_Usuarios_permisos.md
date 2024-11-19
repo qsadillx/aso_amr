@@ -325,3 +325,5 @@ Consiste en probar infinitamente palabras o frases comunes y compararlos con los
 Son un conjunto de hashes que los atacantes usan para buscar el hash de una contraseña sin calcularlo en tiempo real
 
 Para este ultimo ataque podemos usar la pagina [crackstation](https://crackstation.net/).
+
+[Volver al inicio](./../../index.md)
