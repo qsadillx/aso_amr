@@ -43,3 +43,8 @@
 4. PROYECTO EVALUACIÓN 1
    >
    [PROYECTO](./ProyectoEv1/proyecto.md) + [SCRIPT](./ProyectoEv1/proyecto.sh)
+
+5. UT04_Powershell
+
+    > PR0401 + 
+    [Ejercicio](./UT04_Powershell/PR0401/PR401_introducción_powershell.md)
