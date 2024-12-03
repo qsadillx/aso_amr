@@ -25,7 +25,7 @@ El comando sirve para escribir contenido nuevo o reemplazar contenido existente 
 
 5. Explica tres formas diferentes de ver o buscar un comando que hayas utilizado anteriormente en tu sesión.
 
-Escribimos `history` y nos saldrán los comandos utilizados anteriormente
+Escribimos `history`, `invoke-history` y `get-history` y nos saldrán los comandos utilizados anteriormente
 ![history](image-3.png)
 
 6. Averigua si el comando `Get-Process` tienen un parámetro llamado `ComputerName` y en caso afirmativo explica para qué sirve.
