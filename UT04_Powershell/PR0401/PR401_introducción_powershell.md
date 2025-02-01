@@ -54,3 +54,5 @@ Mostraremos las ultimas 20 entradas del historial mediante el comando: `Get-Hist
 
 Gracias al comando `Clear-History -id 10`, `Clear-History -id 12` y `Clear-History -id 14` podemos borrar las entradas con los identificadores 10, 12 y 14
 ![alt text](image-8.png)
+
+[Volver al inicio](./../../index.md)
