@@ -102,7 +102,7 @@ net use H:\\Servidor\Compartida\Alumnos\%username%
 ![alt text](imagenes/ip.png)
 
 Confirmacion
-![alt text](/imagenes/union_dominio.png)
+![alt text](imagenes/union_dominio.png)
 
 Veremos el resultado del script desde el equipo que hemos conectado recientemente
 ![alt text](imagenes/image.png)
