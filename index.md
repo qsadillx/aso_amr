@@ -40,11 +40,7 @@
     > PR0304 +
     [Ejercicio](./UT03_Bash/PR0304/PR0304.md)
 
-4. PROYECTO EVALUACIÓN 1
-   >
-   [PROYECTO](./ProyectoEv1/proyecto.md) + [SCRIPT](./ProyectoEv1/proyecto.sh)
-
-5. UT04_Powershell
+4. UT04_Powershell
 
     > PR0401 + 
     [Ejercicio](./UT04_Powershell/PR0401/PR401_introducción_powershell.md)
@@ -58,11 +54,17 @@
     > PR0404 + 
     [Ejercicio](./UT04_Powershell/PR0404/pr0404.md)
 
-6. UT05_Servicio_de_directorio_WS
+5. UT05_Servicio_de_directorio_WS
     > PR0501 +
     [Ejercicio](./UT05/PR501/PR0501.md)
 
     > PR0502 +
     [Ejercicio](./UT05/PR502/PR0502.md)
 
+6. PROYECTOS 
+   > Proyecto primera evaluacion 
+   [PROYECTO](./ProyectoEv1/proyecto.md) + [SCRIPT](./ProyectoEv1/proyecto.sh)
+   > Proyecto segunda evaluacion 
+   [PROYECTO](./ProyectoEv2/documentacion.md) + [SCRIPT](./ProyectoEv2/scriptusuarios.ps1)
+   >
     
