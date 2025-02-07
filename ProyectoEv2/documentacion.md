@@ -121,7 +121,6 @@ He decidido que las mejores GPOs que podemos usar son:
 
 #### 🥋 Politicas de seguridad / ALUMNOS
 ##### Politicas de acceso y restriccion
-- 📜 Deshabilitar CMD y Powershell
 - 📜 Acceso restringido a herramientas administrativas
 - 📜 Acceso a red interna unicamente mediante credenciales 
 - 📜 Deshabilitacion de ejecucion de scripts no firmados
