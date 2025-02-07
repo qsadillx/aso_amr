@@ -46,13 +46,13 @@
     [Ejercicio](./UT04_Powershell/PR0401/PR401_introducción_powershell.md)
 
     > PR0402 + 
-    [Ejercicio](./UT04_Powershell/PR0401/PR402.md)
+    [Ejercicio](./UT04_Powershell/PR0402/PR402.md)
 
     > PR0403 + 
-    [Ejercicio](./UT04_Powershell/PR0404/pr0403.md)
+    [Ejercicio](./UT04_Powershell/PR0403/pr0403.md)
 
     > PR0404 + 
-    [Ejercicio](./UT04_Powershell/PR0404/pr0404.md)
+    [Ejercicio](./UT04_Powershell/PR0403/pr0404.md)
 
 5. UT05_Servicio_de_directorio_WS
     > PR0501 +
