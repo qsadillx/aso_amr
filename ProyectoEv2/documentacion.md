@@ -114,10 +114,6 @@ He decidido que las mejores GPOs que podemos usar son:
 
 ### Configuraciones de seguridad del dominio
 #### 💻 Politicas de cuenta
-- 📜 Longitud minima de contraseña: 12 caracteres
-- 📜 Complejidad de contraseña: Obligatoria
-- 📜 Caducidad de contraseña: 90 dias
-- 📜 Historial de contraseñas Almacenar ultimas 2
 - 📜 Bloqueos de cuentas
   - 5 intentos
   - 30 minutos de duracion
