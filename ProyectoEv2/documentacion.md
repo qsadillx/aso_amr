@@ -4,11 +4,8 @@
 ### Detalles del controlador 
 
 **NetBios:** AMR
-
 **Contraseña:** Villabalter1
-
 **Sistema utilizado:** Windows Server 2019 Datacenter Evaluation
-
 **Nivel funcional:** Windows Server 2016 
 
 #### Roles utilizados
