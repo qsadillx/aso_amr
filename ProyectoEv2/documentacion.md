@@ -91,7 +91,7 @@ Para ello crearemos una nueva OU llamada **GRUPOS** y la estructuraremos de la s
 
 ## Script
 
-Crearemos el [script](scriptusuariosperso.ps1)
+Crearemos el [script](scriptusuarios.ps1)
 
 A parte de crear nuestro script, también crearemos en la carpeta **NETLOGON** un archivo llamado "**conecta.bat**" para que nuestros ordenadores puedan conectarse a la letra elegida, en nuestro caso será la **H:**
 
