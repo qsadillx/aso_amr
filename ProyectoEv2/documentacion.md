@@ -17,7 +17,9 @@
 *Hemos usado las **carpetas por defecto***
 
 **BDD:** C:\Windows\NTDS
+
 **Registros:** C:\Windows\NTDS
+
 **SYSVOL**:\Windows\SYSVOL
 
 ## Estructura del dominio
